@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
+        //usando polimorfismo para criar os objtos
 
         List<Animal> list = new ArrayList<>();
         list.add(new Aguia("Águia Americana", "Branca - preta"));
