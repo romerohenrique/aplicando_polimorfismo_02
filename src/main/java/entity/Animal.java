@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Objects;
+
 public abstract class Animal {
     protected String especie;
     protected String cor;
@@ -18,6 +20,19 @@ public abstract class Animal {
                 "especie='" + especie + '\'' +
                 ", cor='" + cor + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(especie, animal.especie);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(especie);
     }
 
     public String getEspecie() {
